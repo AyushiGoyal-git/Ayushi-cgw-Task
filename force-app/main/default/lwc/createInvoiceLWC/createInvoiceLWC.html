@@ -1,0 +1,44 @@
+<template>
+    <lightning-card title="Invoice Creation">
+        <div class="slds-p-around_medium">
+            <!-- Display URL Parameters in a Table -->
+            <template if:true={urlParams.origin_record}>
+                <lightning-layout horizontal-align="spread">
+                    <lightning-layout-item>
+                        <strong>Origin Record</strong>: {urlParams.origin_record}
+                    </lightning-layout-item>
+                    <lightning-layout-item>
+                        <strong>Account</strong>: {urlParams.account}
+                    </lightning-layout-item>
+                </lightning-layout>
+                <lightning-layout horizontal-align="spread">
+                    <lightning-layout-item>
+                        <strong>Invoice Date</strong>: {urlParams.invoice_date}
+                    </lightning-layout-item>
+                    <lightning-layout-item>
+                        <strong>Invoice Due Date</strong>: {urlParams.invoice_due_date}
+                    </lightning-layout-item>
+                </lightning-layout>
+                <lightning-layout horizontal-align="spread">
+                    <lightning-layout-item>
+                        <strong>Child Relationship Name</strong>: {urlParams.child_relationship_name}
+                    </lightning-layout-item>
+                    <lightning-layout-item>
+                        <strong>Line Item Description</strong>: {urlParams.line_item_description}
+                    </lightning-layout-item>
+                </lightning-layout>
+                <lightning-layout horizontal-align="spread">
+                    <lightning-layout-item>
+                        <strong>Quantity</strong>: {urlParams.line_item_quantity}
+                    </lightning-layout-item>
+                    <lightning-layout-item>
+                        <strong>Unit Price</strong>: {urlParams.line_item_unit_price}
+                    </lightning-layout-item>
+                </lightning-layout>
+
+                <!-- Button to create the invoice -->
+                <lightning-button label="Create Invoice" onclick={handleCreateInvoice}></lightning-button>
+            </template>
+        </div>
+    </lightning-card>
+</template>
